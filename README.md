@@ -6,13 +6,13 @@
 ## My Learning 📗🔖
 > First time used or real use of these
 > 
-🖊️  <br>
-🖊️  <br>
+🖊️ 1. how to Copy text <br>
+🖊️ 2. how to show toast notification <br>
 
 
 ## Features 📋
 ⚡️ Responsive\
-⚡️ Copy Toast\
+⚡️ Copy text and Toast notification\
 ⚡️ \
 ⚡️ 
 
