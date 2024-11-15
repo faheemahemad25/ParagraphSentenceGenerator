@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{  /* it is a pseudo-class selector */
+    --Dark-Slate-Gray: #556271;
+    --light-GrayBlue-color: #d5e4f4;
+    --light-Gray-color: #e9ebed;
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --orange-color: #fd7e7c;
+    --white-color: #fff;
+}
+
+/* ---- utility class----  */
+
+.padding{
+    padding: 1.5rem;
+    
+}
+
+.Btn{
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+}
+.Btn:hover{
+ background-color: #d97372;
+ box-shadow: 0 0 7px 0 gray;
+}
+/* ---- utility class END ----  */
+
+body{
+    /*sans-serif - little bit bold and little bit size increse  */
+    /*poppins and Roboto - nicely bold  */
+    font-family:  sans-serif,"poppins";
+    background-color: var(--Dark-Slate-Gray);
+}
+.container{
+    width: 60vw;
+    /* height: 80vh; */
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    overflow: hidden; /*📗🔖 why here? issue:- border radius not showing bcz its child getting overflowing*/
+
+}
+
+.textGenerator-head{
+    /* height: 20vh; */
+    /*📗🔖 padding: 1.5rem; it still applying via utility class  just write in html element*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-GrayBlue-color);
+
+    /* box-shadow: 0px 15px 15px -15px gray;*/ /* 📗🔖 only in bottom of element   */
+    margin-bottom: 0.5rem;
+    /* overflow: auto; */
+}
+#numberOfText{
+    /* width: 5rem; */
+    padding: 0.7rem 1rem;
+    font-family: poppins,"Roboto";
+    border-radius: 5px;
+    border: 2px solid #b8cde2;
+    border: none;
+    outline: none; /* 📗🔖 input element after click border line  */
+}
+#inputNumber::placeholder{
+    font-family: poppins,"Roboto";
+    color: var(--primary-text-color);
+}
+.selectoption{
+    color: var(--primary-text-color);
+}
+.head-items-style{
+    padding: 0.7rem 1rem;
+    font-family: poppins,"Roboto";
+    border: none;
+    border-radius: 5px;  
+}
+
+
+
+.textGenerator-body{
+    /*📗🔖 padding: 1.5rem; it still applying via utility class just write in html element */
+    background-color: #DEE6F2;
+    /* background-color: #F7F7F7; */
+    color: var(--secondary-text-color);
+    /* display: none; */
+    /* ---------- scrollbar ------------ Enables both vertical and horizontal scrollbars as needed*/
+
+    height: 60vh;     /* Set a fixed height📗🔖 instead of px use it always as much as viewport height descrese then it willtake showing screen 60 percent like portion. */ 
+    overflow-y: auto;  /*📗🔖Hide horizontal scrollbar */
+    /* overflow-x: auto;  📗🔖Hide horizontal scrollbar */
+    /* or  shortHAND */
+  /* overflow: auto;  */ /*📗🔖 Enables both vertical and horizontal scrollbars as needed */
+}
+
+.toast-container{
+    display: flex;
+    justify-content:center;
+}
+
+
+/* ======================================================================================
+                                    media query
+ ===================================================================================== */
+
+@media screen and (max-width:940px){
+    .container{
+        width: 85vw;
+    }
+
+    .textGenerator-head{
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    form{
+        display: grid; 
+        grid-template-columns: 30% 50% 20%;
+        gap: 4px;  /*📗🔖 not using bcz some gap alredy exist extra with right side of input eleemt bcz this element alredy width must be seted*/
+        width: 100%;
+        /* border: 2px solid red; */
+    }
+
+    form > #GenerateBtn{
+        font-size: 2vw; 
+    }
+}
+
+@media screen and (max-width:350px){
+  
+
+    form{
+        display: grid; 
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 55% 45%;  /* height of rows in the grid first row takes 55% of container height and second row rest pr 45% of conainer height*/
+        gap: 4px;  /*📗🔖 not using bcz some gap alredy exist extra with right side of input eleemt bcz this element alredy width must be seted*/
+        width: 100%;
+    }
+
+    #GenerateBtn{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+}
